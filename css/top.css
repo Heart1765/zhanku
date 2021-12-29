@@ -1,0 +1,310 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #F4F4F4;
+    /* background-color: #fff; */
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+/* 
+.w {
+    height: 60px;
+} */
+
+/* 1. 顶部导航栏 */
+.top {
+    height: 60px;
+    background-color: #ffe300;
+    /* margin-bottom: 18px; */
+    position: relative;
+    z-index: 1;
+}
+
+/* logo部分 */
+.logo {
+    background: url(../img/logo.svg) no-repeat;
+    width: 120px;
+    height: 20px;
+    float: left;
+    margin-top: 18px;
+    margin-left: 70px;
+}
+
+/* 中间导航栏部分 */
+.topNav {
+    /* float: right; */
+    width: 648px;
+    height: 60px;
+    margin: 0 auto;
+}
+
+.topNav>li {
+    float: left;
+    position: relative;
+}
+
+.topNav>li:hover a {
+    background-color: #282828;
+    color: #ffe300;
+}
+
+/* .topNav>li:hover a {
+    color: #ffe300;
+} */
+
+.topNav>li>a {
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 24px;
+    font-size: 14px;
+    color: #333;
+}
+
+.topNav>li>span {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #ff4a3b;
+    border-radius: 50%;
+    top: 21px;
+    right: 13px;
+}
+
+.topNav>li>.san {
+    background: url(../img/nav-more.svg) no-repeat 18px 28px;
+    background-size: 20px auto;
+    padding: 0 30px;
+    width: 20px;
+}
+
+.topNav>li:hover .san {
+    background-image: url(../img/nav-more-hover.svg);
+}
+
+.topNav>li>.list {
+    position: absolute;
+    width: 150px;
+    padding: 5px 0;
+    background-color: #fff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+    display: none;
+    left: 0;
+    top: 60px;
+}
+
+.topNav>li>.list li a {
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+    display: block;
+    padding: 12px 24px;
+}
+
+.topNav>li:hover .list {
+    display: block;
+}
+
+.topNav>li>.list li a:hover {
+    background-color: #ffe300;
+}
+
+
+/* 搜索后面部分 */
+.topRight{  
+    position: absolute;
+    width: 280px;
+    height: 60px;
+    top: 0;
+    right: 0;
+    margin-right: 70px;
+}
+
+/* 搜索 */
+.search {
+    background: url(../img/nav-search.svg) no-repeat 20px 20px;
+}
+
+.search:hover {
+    background-color: #282828;
+    background-image: url(../img/nav-search-hover.svg);
+}
+
+.download,
+.search {
+    float: left;
+    height: 60px;
+    padding: 0 30px;
+    background-size: 20px auto;
+}
+
+/* 下载部分 */
+.download {
+    background: url(../img/nav-upload.svg) no-repeat 20px 20px;
+    background-size: 22px auto;
+    /* position: relative; */
+    /* float: left; */
+}
+
+.down:hover .list {
+    display: block;
+}
+
+.down {
+    float: left;
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.down .list {
+    position: absolute;
+    width: 150px;
+    padding: 5px 0;
+    background-color: #fff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+    top: 60px;
+    right: 0;
+    display: none;
+}
+
+.down .list a {
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+    display: block;
+    padding: 12px 24px;
+}
+
+.down .list a:hover {
+    background-color: #ffe300;
+}
+
+.download:hover {
+    background-color: #282828;
+    background-image: url(../img/nav-upload-hover.svg);
+}
+
+/* 登录部分 */
+.login_zc {
+    position: relative;
+    float: left;
+}
+
+.login_zc:hover {
+    background-color: #282828;
+}
+
+.login_zc:hover .login,
+.login_zc:hover .zc {
+    color: #ffe300;
+}
+
+.login_zc:hover .shu {
+    background-color: #ffe300;
+}
+
+.login,
+.zc {
+    float: left;
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 21px;
+    font-size: 14px;
+}
+
+.top a {
+    color: #333;
+}
+
+.shu {
+    position: absolute;
+    width: 1px;
+    height: 10px;
+    background-color: #333;
+    top: 25px;
+    left: 70px;
+}
+
+/* 登录注册下拉列表 */
+.drop {
+    position: absolute;
+    width: 188px;
+    padding: 0 20px;
+    background-color: #fff;
+    font-size: 14px;
+    top: 60px;
+    right: 0;
+    cursor: pointer;
+    padding-bottom: 10px;
+    box-shadow: 0 0 5px #ccc;
+    border-radius: 0 0 5px 5px;
+    display: none;
+}
+
+.login_zc:hover .drop {
+    display: block;
+}
+
+.drop h4 {
+    cursor: pointer;
+    font-weight: 400;
+    height: 60px;
+    line-height: 60px;
+    width: 148px;
+    border-bottom: 1px solid #ccc
+}
+
+.drop h4 a {
+    font-weight: 700;
+}
+
+.drop div:nth-of-type(1),
+.drop div:nth-of-type(2),
+.drop div:nth-of-type(3),
+.drop div:nth-of-type(4) {
+    width: 145px;
+    height: 42px;
+    text-align: center;
+    margin-left: 18px;
+}
+
+.drop div:nth-of-type(1) {
+    margin-top: 12px;
+    background: url(../img/nav-share.svg) no-repeat;
+    /* background-color: #fff; */
+}
+
+.drop div:nth-of-type(2) {
+    background: url(../img/nav-comment.svg) no-repeat;
+}
+
+.drop div:nth-of-type(3) {
+    background: url(../img/nav-col.svg) no-repeat;
+    /* background-color: #fff; */
+}
+
+.drop div:nth-of-type(4) {
+    background-color: #ffe300;
+    line-height: 40px;
+    border-radius: 8px;
+    margin-left: 2px;
+}
+
+.drop div:nth-of-type(4):hover {
+    background-color: #ffd000;
+}

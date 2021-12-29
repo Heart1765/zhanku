@@ -1,0 +1,150 @@
+/* .slider::after {
+           content : "";
+    clear : "both";
+    display : block;
+        } */
+
+/* 轮播图和五个广告 */
+.slider-adv-box {
+    padding-top: 18px;
+    /* height: 680px; */
+    background-color: #fff;
+}
+
+/* 轮播图 */
+.lun {
+    width: 1380px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.lun span {
+    display: block;
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background-color: rgba(127, 127, 127, 0.5);
+    top: 150px;
+    margin-left: 30px;
+    font-size: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 30px;
+    color: rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    z-index: 1;
+}
+
+.lun span.r {
+    position: absolute;
+    right: 30px;
+}
+
+.lun span:hover {
+    color: #ffe300;
+    cursor: pointer;
+}
+
+.bo {
+    width: 9999px;
+    transition: all 1s;
+}
+
+.bo img {
+    display: block;
+    width: 1380px;
+    float: left;
+    border-radius: 5px;
+}
+
+li {
+    list-style: none;
+}
+
+.lun .list {
+    width: 220px;
+    height: 30px;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    /* background-color: pink; */
+}
+
+.lun .list li {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    float: left;
+    border: 2px solid #ccc;
+    margin-left: 10px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.lun .list .cho {
+    border: 4px solid #ccc;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+/* 五个广告 */
+
+.adv5 {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+
+.adv5 img {
+    /* float: left; */
+    width: 260px;
+    height: 210px;
+    border-radius: 5px;
+}
+
+/* 三个li */
+.fix {
+    width: 100%;
+    /* height: ; */
+    position: relative;
+    /* position: fixed; */
+    /* top: 0;
+    z-index: 110; */
+    background-color: #fff;
+    transition:  all 1s;
+}
+.fix .list1 {
+    margin: 0 auto ;
+    width: 400px;
+    height: 64px;
+}
+.fix .list1 li {
+    float: left;
+    padding: 20px 0;
+    margin-right: 70px;
+    cursor: pointer;
+}
+
+.fix .list1 li:nth-of-type(3) {
+    margin-right: 0;
+}
+.fix .list1 li a {
+    color: #333;
+}
+
+.fix .list1 .cho {
+    border-bottom: 2px solid #333;
+
+}
+
+/* 酷友说 */
+.kuyoushuo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 205px;
+    height: auto;
+    position: absolute;
+}

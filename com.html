@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/top.css">
+    <script src="./js/jquery-3.6.0.js"></script>
+
+</head>
+
+<body>
+    <!-- 1.顶部导航栏 -->
+    <header class="top">
+        <!-- <div class="w"> -->
+        <!-- logo部分 -->
+        <a href="">
+            <div class="logo"></div>
+        </a>
+        <!-- 导航栏 -->
+        <ul class="topNav">
+            <li><a href="" style="font-weight: 700;">首页</a>
+                <ul class="list">
+                    <li><a href="">站酷首页</a></li>
+                    <li><a href="">我的首页</a></li>
+                </ul>
+            </li>
+            <li><a href="">发现</a><span></span></li>
+            <li><a href="">职位</a>
+                <ul class="list">
+                    <li><a href="">职位</a></li>
+                    <li><a href="">公司</a></li>
+                    <li><a href="">+ 发布职位</a></li>
+                </ul>
+            </li>
+            <li><a href="">活动</a><span></span>
+                <ul class="list">
+                    <li><a href="">设计大赛</a></li>
+                    <li><a href="">专题策划</a></li>
+                    <li><a href="">线上活动</a></li>
+                    <li><a href="">线下活动</a></li>
+                    <li><a href="">互相投票</a></li>
+                    <li><a href="">学习音频</a></li>
+                </ul>
+            </li>
+            <li><a href="">正版素材</a>
+                <ul class="list">
+                    <li><a href="">图片</a></li>
+                    <li><a href="">视频</a></li>
+                    <li><a href="">字体</a></li>
+                    <li><a href="">音乐</a></li>
+                    <li><a href="">创意专题</a></li>
+                    <li><a href="">我要供图</a></li>
+                </ul>
+            </li>
+            <li><a href="">课程</a>
+                <ul class="list">
+                    <li><a href="">会员专区</a></li>
+                    <li><a href="">平面视觉</a></li>
+                    <li><a href="">绘画插画</a></li>
+                    <li><a href="">电商设计</a></li>
+                    <li><a href="">UI设计</a></li>
+                    <li><a href="">商业摄影</a></li>
+                    <li><a href="">全部课程</a></li>
+                </ul>
+            </li>
+            <li><a href="">版权保护</a>
+                <ul class="list">
+                    <li><a href="">著作权登记</a></li>
+                    <li><a href="">区块链存证</a></li>
+                </ul>
+            </li>
+            <li><a href="" class="san"></a><span></span>
+                <ul class="list">
+                    <li><a href="">设计师</a></li>
+                    <li><a href="">榜单</a></li>
+                    <li><a href="">站酷App</a></li>
+                    <li><a href="">站酷字体</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- 搜索登录部分 -->
+        <div class="topRight">
+            <!-- 搜索 -->
+            <a href="">
+                <div class="search"></div>
+            </a>
+            <!-- 下载 -->
+            <div class="down">
+                <a href="" class="download">
+                </a>
+                <ul class="list">
+                    <li><a href="">上传作品</a></li>
+                    <li><a href="">写文章</a></li>
+                    <li><a href="">我的创作</a></li>
+                </ul>
+            </div>
+            <!-- 登录注册 -->
+            <div class="login_zc">
+                <a href=""><span class="login">登录</span></a>
+                <div class="shu"></div>
+                <a href=""><span class="zc">注册</span></a>
+                <div class="drop">
+                    <h4>
+                        <a href="" style="color: #d36f16;">登录/注册</a>后，可享受：
+                    </h4>
+                    <div>分享你的作品</div>
+                    <div>评论你的想法</div>
+                    <div>收藏海量灵感</div>
+                    <div>登录</div>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+    </header>
+    <div class="content">
+        <img src="" alt="">
+        <p class="title"></p>
+        <p class="s3">
+            <span class="see"></span>
+            <span class="comment"></span>
+            <span class="dz"></span>
+        </p>
+    </div>
+    <script>
+        $(function () {
+            $.ajax({
+                url: "./shang.json",
+                success: function (respones) {
+                    var sli = window.location.search.indexOf("=")
+                    var img = document.querySelector("img")
+                    var title = document.querySelector(".title")
+                    var see = document.querySelector(".s3 .see")
+                    var comment = document.querySelector(".s3 .comment")
+                    var dz = document.querySelector(".s3 .dz")
+                    sli = window.location.search.slice(sli + 1)
+                    console.log(sli);
+                    for (let i = 0; i < respones.com.length; i++) {
+                        if (respones.com[i].id == sli) {
+                            img.src = respones.com[i].img
+                            title.innerHTML = respones.com[i].title
+                            see.innerHTML = "浏览：" + respones.com[i].count1
+                            comment.innerHTML = "评论：" + respones.com[i].count2
+                            dz.innerHTML = "点赞：" + respones.com[i].count3
+                        }
+                    }
+                },
+                error: function (reject) {
+                }
+            })
+        })
+
+
+        // console.log(window.location);
+        // var sli = window.location.search.indexOf("=")
+        // sli = window.location.search.slice(sli + 1)
+        // console.log(sli);
+    </script>
+</body>
+
+</html>
